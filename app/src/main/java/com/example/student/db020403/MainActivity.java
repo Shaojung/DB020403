@@ -10,7 +10,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-
+    String[] fruits = {"蘋果", "鳳梨", "橘子", "香蕉", "檸檬"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            return 5;
+            return fruits.length;
         }
 
         @Override
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             TextView tv = new TextView(MainActivity.this);
-            tv.setText("Hello");
+            tv.setText(fruits[position]);
             return tv;
         }
     }
