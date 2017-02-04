@@ -1,6 +1,7 @@
 package com.example.student.db020403;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -36,8 +37,10 @@ public class MyAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        TextView tv = new TextView(context);
+        LayoutInflater inflater = LayoutInflater.from(context);
+        View v = inflater.inflate(R.layout.myitem, null);
+        TextView tv = (TextView) v.findViewById(R.id.textView);
         tv.setText(data[position]);
-        return tv;
+        return v;
     }
 }
