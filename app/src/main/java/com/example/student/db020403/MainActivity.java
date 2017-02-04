@@ -16,35 +16,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ListView lv = (ListView) findViewById(R.id.listView);
-        MyAdapter adapter = new MyAdapter();
+        MyAdapter adapter = new MyAdapter(MainActivity.this, fruits);
         lv.setAdapter(adapter);
     }
 
-    class MyAdapter extends BaseAdapter
-    {
 
-        @Override
-        public int getCount() {
-            return fruits.length;
-        }
-
-        @Override
-        public Object getItem(int position) {
-            return null;
-        }
-
-        @Override
-        public long getItemId(int position) {
-            return 0;
-        }
-
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            TextView tv = new TextView(MainActivity.this);
-            tv.setText(fruits[position]);
-            return tv;
-        }
-    }
 }
 
 
